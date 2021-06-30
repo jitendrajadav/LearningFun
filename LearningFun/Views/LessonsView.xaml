@@ -14,7 +14,7 @@
                     Direction="Column" />
             </ScrollView>
 
-            <!--<controls:FormsFloatingActionButton
+            <controls:FormsFloatingActionButton
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
                 AbsoluteLayout.LayoutFlags="All"
                 BackgroundColor="White"
@@ -23,7 +23,7 @@
                 ImageSource="fab_training"
                 IsVisible="{OnPlatform Android=true,
                                        iOS=false}"
-                VerticalOptions="End" />-->
+                VerticalOptions="End" />
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
