@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LearningFun.Views.StoreView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:LearningFun.Templates">
+    <ContentPage.Content>
+        <CollectionView
+            Margin="{OnPlatform Android='20,0',
+                                iOS='20,0,20,70'}"
+            IsGrouped="true"
+            ItemSizingStrategy="MeasureAllItems"
+            ItemTemplate="{templates:StoreItemDataTemplate}"
+            ItemsSource="{Binding Groups}"
+            VerticalScrollBarVisibility="Never">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="20" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.Header>
+                <Grid Padding="0,20,0,0" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="110" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Padding="0"
+                        CornerRadius="20"
+                        HeightRequest="270"
+                        IsClippedToBounds="True">
+                        <Image Aspect="Fill" Source="store_duo_plus" />
+                    </Frame>
+
+                    <Label
+                        Margin="20,60,20,0"
+                        FontFamily="{StaticResource FontRegular}"
+                        FontSize="Large"
+                        Text="Baixe qualquer lição offline e diga adeus aos anúncios."
+                        TextColor="White"
+                        VerticalTextAlignment="Start" />
+
+                    <Grid
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="20"
+                        HorizontalOptions="{OnPlatform Android=Start,
+                                                       iOS=Fill}"
+                        VerticalOptions="End">
+                        <BoxView
+                            BackgroundColor="#91D8F7"
+                            CornerRadius="20"
+                            HeightRequest="60" />
+
+                        <Button
+                            BackgroundColor="White"
+                            CornerRadius="20"
+                            HeightRequest="60"
+                            Style="{StaticResource ElevatedButton}"
+                            Text="{OnPlatform Android='SAIBA MAIS',
+                                              iOS='EXPERIMENTE DE GRAÇA'}"
+                            TextColor="#1CB1F5" />
+                    </Grid>
+                </Grid>
+            </CollectionView.Header>
+
+            <CollectionView.Footer>
+                <ContentView HeightRequest="20" />
+            </CollectionView.Footer>
+
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label
+                        Margin="0,20"
+                        FontSize="Title"
+                        Text="{Binding Name}"
+                        VerticalTextAlignment="Center" />
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+
+            <CollectionView.GroupFooterTemplate>
+                <DataTemplate>
+                    <ContentView />
+                </DataTemplate>
+            </CollectionView.GroupFooterTemplate>
+
+
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

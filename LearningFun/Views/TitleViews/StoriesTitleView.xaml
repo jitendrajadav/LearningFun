@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="LearningFun.Views.TitleViews.StoriesTitleView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <FlexLayout Margin="{OnPlatform Android='0,0,15,0', iOS='0'}" JustifyContent="SpaceBetween">
+            <Image HeightRequest="40" Source="navbar_english.png" />
+
+            <StackLayout Orientation="Horizontal">
+                <Image HeightRequest="40" Source="navbar_crown.png" />
+
+                <Label
+                    FontSize="Large"
+                    Text="74"
+                    TextColor="#f3c747"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Image HeightRequest="40" Source="navbar_fire.png" />
+
+                <Label
+                    FontSize="Large"
+                    Text="0"
+                    TextColor="#b0afaf"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Image HeightRequest="40" Source="navbar_heart.png" />
+
+                <Label
+                    FontSize="Large"
+                    Text="204"
+                    TextColor="#de5c56"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+        </FlexLayout>
+    </ContentView.Content>
+</ContentView>

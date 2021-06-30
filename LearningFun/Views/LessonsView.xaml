@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LearningFun.Views.LessonsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:LearningFun.Controls"
+    xmlns:templates="clr-namespace:LearningFun.Templates">
+    <ContentPage.Content>
+        <AbsoluteLayout Margin="{OnPlatform Android=0, iOS='0,0,0,66'}">
+            <ScrollView AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                <FlexLayout
+                    BindableLayout.ItemTemplateSelector="{templates:LessonGroupDataTemplateSelector}"
+                    BindableLayout.ItemsSource="{Binding LessonGroup}"
+                    Direction="Column" />
+            </ScrollView>
+
+            <controls:FormsFloatingActionButton
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="White"
+                Command="{Binding NavigateToTrainingCommand}"
+                HorizontalOptions="End"
+                ImageSource="fab_training"
+                IsVisible="{OnPlatform Android=true,
+                                       iOS=false}"
+                VerticalOptions="End" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

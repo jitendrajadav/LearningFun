@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="LearningFun.ContentViews.LessonContentView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:LearningFun.Controls"
+    xmlns:converters="clr-namespace:LearningFun.Converters"
+    Margin="10,0">
+    <ContentView.Content>
+        <StackLayout Spacing="15">
+            <Grid
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="100">
+                <controls:CircularProgressBar
+                    HeightRequest="100"
+                    Progress="{Binding Progress}"
+                    ProgressColor="{StaticResource ProgressColor}"
+                    Rotation="135"
+                    TrackColor="{StaticResource TrackColor}"
+                    WidthRequest="100" />
+
+                <BoxView
+                    BackgroundColor="{Binding Color}"
+                    CornerRadius="{OnPlatform Android=33,
+                                              iOS=37}"
+                    HeightRequest="{OnPlatform Android=66,
+                                               iOS=74}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="{OnPlatform Android=66,
+                                              iOS=74}" />
+
+                <Image
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    Source="{Binding Icon}"
+                    WidthRequest="40" />
+
+                <Grid
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    WidthRequest="50">
+                    <Image Source="{Binding Level, Converter={converters:LevelToImageCrownConverter}}" />
+
+                    <Label
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Level}"
+                        TextColor="#ce8830"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+            </Grid>
+
+            <Label
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Name}" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

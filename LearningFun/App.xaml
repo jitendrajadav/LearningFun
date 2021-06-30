@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication
+    x:Class="LearningFun.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform
+                x:Key="FontBold"
+                x:TypeArguments="x:String"
+                Android="Fonts/DINNextRoundedLTPro-Bold.ttf#DINNextRounded"
+                iOS="DINNextRoundedLTPro-Bold" />
+
+            <OnPlatform
+                x:Key="FontRegular"
+                x:TypeArguments="x:String"
+                Android="Fonts/DINNextRoundedLTPro-Regular.ttf#DINNextRounded"
+                iOS="DINNextRoundedLTPro-Regular" />
+
+            <Color x:Key="TitleColor">#4b4c4b</Color>
+            <Color x:Key="SubTitleColor">#828282</Color>
+            <Color x:Key="TrackColor">#e6e6e6</Color>
+            <Color x:Key="ProgressColor">#f7ca45</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource FontBold}" />
+                <Setter Property="TextColor" Value="{StaticResource TitleColor}" />
+            </Style>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="White" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style x:Key="DivisorLine" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="BackgroundColor" Value="#dfe0e0" />
+                <Setter Property="Margin" Value="0,15" />
+            </Style>
+
+            <Style TargetType="ImageButton">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonState">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TranslationY" Value="-8" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="TranslationY" Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style x:Key="ElevatedButton" TargetType="Button">
+                <Setter Property="FontFamily" Value="{StaticResource FontBold}" />
+                <Setter Property="FontSize" Value="22" />
+
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonState">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TranslationY" Value="-6" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="TranslationY" Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LearningFun.Views.StoriesView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <CollectionView
+            IsGrouped="True"
+            ItemSizingStrategy="{OnPlatform Android=MeasureAllItems,
+                                            iOS=MeasureFirstItem}"
+            ItemsSource="{Binding Stories}">
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,30" ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView
+                            Grid.Column="0"
+                            Style="{StaticResource DivisorLine}"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            FontSize="26"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Name}"
+                            VerticalTextAlignment="Center" />
+
+                        <BoxView
+                            Grid.Column="2"
+                            Style="{StaticResource DivisorLine}"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+
+            <CollectionView.GroupFooterTemplate>
+                <DataTemplate>
+                    <Label Text="" />
+                </DataTemplate>
+            </CollectionView.GroupFooterTemplate>
+
+            <CollectionView.Header>
+                <Grid
+                    Margin="0"
+                    HeightRequest="200"
+                    RowSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Margin="50,0"
+                        FontSize="30"
+                        HeightRequest="100"
+                        HorizontalTextAlignment="Center"
+                        Text="Duolingo Histórias"
+                        VerticalTextAlignment="End" />
+
+                    <Label
+                        Grid.Row="1"
+                        Margin="50,0"
+                        FontFamily="{StaticResource FontRegular}"
+                        FontSize="18"
+                        HeightRequest="100"
+                        HorizontalTextAlignment="Center"
+                        Text="Melhore sua leitura e escuta com histórias curtas!"
+                        TextColor="{StaticResource SubTitleColor}"
+                        VerticalTextAlignment="Start" />
+                </Grid>
+
+            </CollectionView.Header>
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout HeightRequest="200" WidthRequest="200">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <BoxView
+                                BackgroundColor="{Binding ShadowBottomColor}"
+                                CornerRadius="18"
+                                HeightRequest="118"
+                                HorizontalOptions="Center"
+                                TranslationY="-5"
+                                VerticalOptions="End"
+                                WidthRequest="118" />
+
+                            <ImageButton
+                                BackgroundColor="Transparent"
+                                HeightRequest="140"
+                                HorizontalOptions="Center"
+                                Source="{Binding Image}"
+                                VerticalOptions="End"
+                                WidthRequest="140" />
+                        </Grid>
+
+                        <Label
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Name}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

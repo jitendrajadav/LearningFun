@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LearningFun.Views.RankingView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="RankingLevel" TargetType="Image">
+                <Setter Property="HeightRequest" Value="{OnPlatform Android=50, iOS=70}" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+
+            <Style x:Key="RankingLevelHighlight" TargetType="Image">
+                <Setter Property="HeightRequest" Value="{OnPlatform Android=100, iOS=120}" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid Margin="{OnPlatform Android=0, iOS='0,50,0,66'}" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+                <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+                    <StackLayout Margin="15,0" Orientation="Horizontal">
+                        <Image Source="ranking_level_1" Style="{StaticResource RankingLevelHighlight}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                        <Image Source="ranking_level" Style="{StaticResource RankingLevel}" />
+                    </StackLayout>
+                </ScrollView>
+
+                <Label
+                    FontSize="30"
+                    HorizontalTextAlignment="Center"
+                    Text="Divisão Bronze"
+                    TextColor="{StaticResource TitleColor}" />
+                <Label
+                    FontFamily="{StaticResource FontRegular}"
+                    FontSize="24"
+                    HorizontalTextAlignment="Center"
+                    Text="Compita com jogadores em um ranking semanal"
+                    TextColor="{StaticResource SubTitleColor}" />
+            </StackLayout>
+
+            <BoxView Grid.Row="1" Style="{StaticResource DivisorLine}" />
+
+            <StackLayout
+                Grid.Row="2"
+                Margin="25,0"
+                VerticalOptions="Center">
+                <Image HeightRequest="{OnPlatform Android=100, iOS=150}" Source="ranking_duo_sleeping" />
+
+                <Label
+                    FontFamily="{StaticResource FontRegular}"
+                    FontSize="24"
+                    HorizontalTextAlignment="Center"
+                    Text="Conclua uma lição para entrar no ranking dessa semana" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

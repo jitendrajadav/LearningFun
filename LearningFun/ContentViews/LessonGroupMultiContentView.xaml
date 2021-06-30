@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="LearningFun.ContentViews.LessonGroupMultiContentView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contentViews="clr-namespace:LearningFun.ContentViews">
+    <ContentView.Content>
+        <FlexLayout
+            AlignItems="Center"
+            BindableLayout.ItemsSource="{Binding Lessons}"
+            Direction="Row"
+            HeightRequest="180"
+            JustifyContent="Center">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <contentViews:LessonContentView />
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+    </ContentView.Content>
+</ContentView>
