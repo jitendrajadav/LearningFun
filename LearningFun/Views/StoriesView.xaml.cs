@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using LearningFun.Interfaces;
+﻿using LearningFun.Interfaces;
 using LearningFun.Views.TitleViews;
 using Xamarin.Forms;
 

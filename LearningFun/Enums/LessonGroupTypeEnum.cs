@@ -1,5 +1,4 @@
-﻿using System;
-namespace LearningFun.Enums
+﻿namespace LearningFun.Enums
 {
     public enum LessonGroupTypeEnum
     {

@@ -1,5 +1,4 @@
-﻿using System;
-namespace LearningFun.Controls
+﻿namespace LearningFun.Controls
 {
     public class HorizontalProgressBar : ProgressBarBase
     {

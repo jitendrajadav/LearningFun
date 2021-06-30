@@ -1,5 +1,4 @@
-﻿using System;
-using LearningFun.Fakes;
+﻿using LearningFun.Fakes;
 using LearningFun.Interfaces;
 using LearningFun.ViewModels;
 using LearningFun.Views;
@@ -7,7 +6,6 @@ using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace LearningFun
 {

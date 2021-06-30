@@ -1,5 +1,4 @@
-﻿using System;
-namespace LearningFun.ViewModels
+﻿namespace LearningFun.ViewModels
 {
     public class TrainingViewModel : ViewModelBase
     {

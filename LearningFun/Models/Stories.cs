@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LearningFun.Models
+﻿namespace LearningFun.Models
 {
     public class Stories
     {

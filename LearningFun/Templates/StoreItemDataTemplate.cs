@@ -1,5 +1,4 @@
-﻿using System;
-using LearningFun.ContentViews;
+﻿using LearningFun.ContentViews;
 using LearningFun.Enums;
 using LearningFun.Models;
 using Xamarin.Forms;

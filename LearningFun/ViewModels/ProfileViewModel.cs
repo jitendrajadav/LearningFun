@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using LearningFun.Interfaces;
 using LearningFun.Models;
 using Prism;
-using Prism.Navigation;
 
 namespace LearningFun.ViewModels
 {

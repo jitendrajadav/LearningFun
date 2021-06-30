@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
 using LearningFun.Interfaces;
 using LearningFun.Models;
 using Prism;

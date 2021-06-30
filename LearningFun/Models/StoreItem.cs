@@ -1,5 +1,4 @@
-﻿using System;
-using LearningFun.Enums;
+﻿using LearningFun.Enums;
 
 namespace LearningFun.Models
 {
