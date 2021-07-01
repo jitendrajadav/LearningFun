@@ -38,8 +38,6 @@ namespace LearningFun.Fakes
                         {
                             GetNewLesson("Saudações", "4", "lesson_dialog", _colorLevel4, 0.8),
                             GetNewLesson("Viagem", "3", "lesson_airplane", _colorLevel3, 0.0)
-
-
                         }
                     },
 
@@ -50,7 +48,6 @@ namespace LearningFun.Fakes
                         {
                             GetNewLesson("Cafeteria", "2", "lesson_hamburger", _colorLevel2, 0.7),
                             GetNewLesson("Famílias", "1", "lesson_baby", _colorLevel1, 0.1)
-
                         }
                     },
 
@@ -92,7 +89,7 @@ namespace LearningFun.Fakes
                         {
                             GetNewLesson(string.Empty, "1", "lesson_divisor_castle", string.Empty, 0.0)
                         }
-                    }, 
+                    },
 
                     new LessonGroup
                     {

@@ -52,8 +52,8 @@ namespace LearningFun.Droid.Renderers
             for (var index = 0; index < _formsTabs.Children.Count; index++)
             {
                 var androidTab = _bottomNavigationView.Menu.GetItem(index);
+               
                 int iconId;
-
                 if (_formsTabs.Children[index] is ITabPageIcons tabPage)
                 {
                     if (_formsTabs.Children[index] == _formsTabs.CurrentPage)

@@ -13,15 +13,15 @@ namespace LearningFun.Views
         {
             InitializeComponent();
 
-            Children.Add(new LessonsView());
-            Children.Add(new StoriesView());
+            //Children.Add(new LessonsView());
+            //Children.Add(new StoriesView());
 
             //if (Device.RuntimePlatform == Device.iOS)
             //    Children.Add(new TrainingView());
 
-            Children.Add(new ProfileView());
-            Children.Add(new RankingView());
-            Children.Add(new StoreView());
+            //Children.Add(new ProfileView());
+            //Children.Add(new RankingView());
+            //Children.Add(new StoreView());
         }
 
         protected override void OnCurrentPageChanged()

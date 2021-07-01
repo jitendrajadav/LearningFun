@@ -20,9 +20,19 @@ namespace LearningFun.Fakes
                             GetNewStories("Bom dia!", "stories_coffe", "#f5b43f"),
                             GetNewStories("Um encontro", "stories_candle", "#503322"),
                             GetNewStories("Uma coisa", "stories_bread", "#68ad33"),
-                            GetNewStories("Surpresa", "stories_gift", "#de90d0")
+                            GetNewStories("Surpresa", "stories_gift", "#de90d0"),
+                            GetNewStories("Surpresa", "stories_coffe", "#de90d0")
                         }
-                    )
+                    ),
+                    new StoriesGroup(
+                        "Série 2",
+                        new List<Stories>()
+                        {
+                            GetNewStories("Bom dia!", "stories_coffe", "#f5b43f"),
+                            GetNewStories("Um encontro", "stories_candle", "#503322"),
+                            GetNewStories("Uma coisa", "stories_bread", "#68ad33"),
+                            GetNewStories("Surpresa", "stories_gift", "#de90d0")
+                        }),
                 };
             });
         }

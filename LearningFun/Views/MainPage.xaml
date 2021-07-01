@@ -7,7 +7,17 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Título app"
+    xmlns:contentViews="clr-namespace:LearningFun.Views"
     android:TabbedPage.ToolbarPlacement="Bottom"
     BarBackgroundColor="White"
     BarTextColor="Black"
-    mc:Ignorable="d" />
+    mc:Ignorable="d" >
+
+    <contentViews:LessonsView Title="Lesson"/>
+    <contentViews:StoriesView Title="Stories"/>
+    <contentViews:ProfileView Title="Profile"/>
+    <contentViews:RankingView Title="Ranking"/>
+    <contentViews:StoreView Title="Store"/>
+   
+</TabbedPage>
+    

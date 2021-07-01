@@ -40,7 +40,7 @@
 
             <CollectionView.GroupFooterTemplate>
                 <DataTemplate>
-                    <Label Text="" />
+                    <Label />
                 </DataTemplate>
             </CollectionView.GroupFooterTemplate>
 
