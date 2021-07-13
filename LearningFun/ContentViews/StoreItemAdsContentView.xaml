@@ -8,7 +8,7 @@
             Margin="2,0"
             BorderColor="#E5E5E5"
             CornerRadius="20"
-            HasShadow="false">
+            HasShadow="False">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
