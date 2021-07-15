@@ -2,9 +2,46 @@
 <ContentView
     x:Class="LearningFun.Views.TitleViews.StoriesTitleView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:control="clr-namespace:LearningFun.Controls">
     <ContentView.Content>
-        <FlexLayout Margin="{OnPlatform Android='0,0,15,0', iOS='0'}" JustifyContent="SpaceBetween">
+        <Grid 
+            RowSpacing="0"
+            ColumnSpacing="0"
+            RowDefinitions="Auto,Auto"
+            ColumnDefinitions="Auto,*"
+            Margin="0,0,15,0">
+            
+            <ImageButton
+                Grid.Column="0"
+                BackgroundColor="Transparent"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                Source="navbar_fire.png"
+                VerticalOptions="End"
+                WidthRequest="40" 
+                Clicked="ImageButton_Clicked"/>
+            <Label
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                FontSize="Large"
+                Text="doing well!"
+                TextColor="{StaticResource ProgressColor}"
+                VerticalTextAlignment="Center" />
+            <StackLayout  
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Orientation="Horizontal">
+                <control:CustomProgressBar  
+                    x:Name="progressIndicator"
+                    HorizontalOptions="FillAndExpand"
+                    Progress="0.1"/>
+            </StackLayout>
+        </Grid>
+        <!--BackgroundColor="{StaticResource TrackColor}"
+        ProgressColor="{StaticResource ProgressColor}"-->
+
+        <!--<FlexLayout Margin="{OnPlatform Android='0,0,15,0', iOS='0'}" JustifyContent="SpaceBetween">
             <Image HeightRequest="40" Source="navbar_english.png" />
 
             <StackLayout Orientation="Horizontal">
@@ -36,6 +73,6 @@
                     TextColor="#de5c56"
                     VerticalTextAlignment="Center" />
             </StackLayout>
-        </FlexLayout>
+        </FlexLayout>-->
     </ContentView.Content>
 </ContentView>

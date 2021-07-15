@@ -1,5 +1,4 @@
-﻿using System;
-using LearningFun.Controls;
+﻿using LearningFun.Controls;
 using LearningFun.iOS.Controls;
 using LearningFun.iOS.Renderers;
 using Xamarin.Forms;

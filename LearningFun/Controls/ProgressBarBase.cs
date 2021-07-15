@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace LearningFun.Controls
 {
@@ -37,13 +38,25 @@ namespace LearningFun.Controls
                 nameof(Progress),
                 typeof(double),
                 typeof(ProgressBarBase),
-                0.0
+                0.0,
+                BindingMode.TwoWay,
+                propertyChanged: (bindable, oldValue, newValue) =>
+                {
+                    ProgressBarBase control = (ProgressBarBase)bindable;
+                    control.Progress = (double)newValue;
+                }
             );
 
         public double Progress
         {
             get => (double)GetValue(ProgressProperty);
             set => SetValue(ProgressProperty, value);
+        }
+
+        public event EventHandler ValueChanged;
+        public void NotifyValueChanged()
+        {
+            ValueChanged?.Invoke(this, new EventArgs());
         }
     }
 }
