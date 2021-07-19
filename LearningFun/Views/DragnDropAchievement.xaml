@@ -1,14 +1,32 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentView
-    x:Class="LearningFun.ContentViews.ProfileAchievementsContentView"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:LearningFun.Controls"
-    xmlns:converters="clr-namespace:LearningFun.Converters">
-    <ContentView.Content>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningFun.Views.DragnDropAchievement"
+             xmlns:controls="clr-namespace:LearningFun.Controls"
+             xmlns:converters="clr-namespace:LearningFun.Converters">
+
+    <!--<ContentPage.Resources>
+        <Style TargetType="FlexLayout">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                        Value="LightYellow" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+    </ContentPage.Resources>-->
+    
         <CollectionView
             ItemsSource="{Binding Achievements}"
-            SelectionMode="Single">
+            SelectionMode="Single"
+            ItemSizingStrategy="MeasureAllItems">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <FlexLayout Padding="20">
@@ -25,10 +43,10 @@
                         </Grid>
 
                         <FlexLayout
-                            Margin="20,0,0,0"
-                            Direction="Column"
-                            FlexLayout.Basis="100%"
-                            JustifyContent="SpaceEvenly">
+                                Margin="20,0,0,0"
+                                Direction="Column"
+                                FlexLayout.Basis="100%"
+                                JustifyContent="SpaceEvenly">
                             <Label
                                 FontSize="26"
                                 Text="{Binding Name}"
@@ -51,11 +69,11 @@
                                 </Grid.ColumnDefinitions>
 
                                 <controls:HorizontalProgressBar
-                                    Grid.Column="0"
-                                    Progress="{Binding Progress}"
-                                    ProgressColor="{StaticResource ProgressColor}"
-                                    TrackColor="{StaticResource TrackColor}"
-                                    VerticalOptions="Center"/>
+                                        Grid.Column="0"
+                                        Progress="{Binding Progress}"
+                                        ProgressColor="{StaticResource ProgressColor}"
+                                        TrackColor="{StaticResource TrackColor}"
+                                        VerticalOptions="Center"/>
 
                                 <Label
                                     Grid.Column="1"
@@ -69,5 +87,5 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </ContentView.Content>
-</ContentView>
+
+</ContentPage>

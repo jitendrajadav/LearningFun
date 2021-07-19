@@ -1,22 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using LearningFun.Interfaces;
 using LearningFun.Models;
 using Prism;
 using Prism.Navigation;
+using System.Linq;
 
 namespace LearningFun.ViewModels
 {
-    public class ProfileViewModel : ViewModelBase, IActiveAware
+    public class DragnDropAchievementViewModel : ViewModelBase, IActiveAware
     {
         private readonly IAchievementsService _achievementsService;
         private readonly IFriendsService _friendsService;
 
         public ObservableCollection<Achievement> Achievements { get; private set; }
-        public ObservableCollection<Friend> Friends { get; private set; }
+        public ObservableCollection<Achievement> Friends { get; private set; }
 
-        public ProfileViewModel(
+        public DragnDropAchievementViewModel(
             IAchievementsService achievementsService,
             IFriendsService friendsService, INavigationService navigationService) : base(navigationService)
         {
@@ -24,7 +26,7 @@ namespace LearningFun.ViewModels
             _friendsService = friendsService;
 
             Achievements = new ObservableCollection<Achievement>();
-            Friends = new ObservableCollection<Friend>();
+            Friends = new ObservableCollection<Achievement>();
         }
 
         public event EventHandler IsActiveChanged;
@@ -47,21 +49,11 @@ namespace LearningFun.ViewModels
             {
                 if (Achievements.Count == 0)
                 {
-                    System.Collections.Generic.IList<Achievement> achievements = await _achievementsService.GetAchievementsAsync();
+                    IList<Achievement> achievements = await _achievementsService.GetAchievementsAsync();
 
-                    foreach (Achievement achievement in achievements)
+                    foreach (Achievement achievement in achievements.Take(2))
                     {
                         Achievements.Add(achievement);
-                    }
-                }
-
-                if (Friends.Count == 0)
-                {
-                    System.Collections.Generic.IList<Friend> friends = await _friendsService.GetFriends();
-                    
-                    foreach (Friend friend in friends)
-                    {
-                        Friends.Add(friend);
                     }
                 }
             }

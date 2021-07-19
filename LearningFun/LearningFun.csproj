@@ -15,7 +15,6 @@
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Views\TitleViews\" />
     <Folder Include="Models\" />
@@ -27,6 +26,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\DragAndDropGesture.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DragnDropAchievement.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -18,7 +18,7 @@ namespace LearningFun.Fakes
                         "NÍVEL 9",
                         "Majestade",
                         "Ganhe 80 coroas",
-                        0.9875,
+                        1,
                         "79/80",
                         true
                     ),
@@ -64,8 +64,8 @@ namespace LearningFun.Fakes
                         "Estrategista",
                         "Você leu uma dica",
                         1,
-                        string.Empty,
-                        false
+                        "JJ",
+                        true
                     )
                 };
             });

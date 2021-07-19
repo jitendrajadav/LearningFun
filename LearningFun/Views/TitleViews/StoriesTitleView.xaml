@@ -3,7 +3,7 @@
     x:Class="LearningFun.Views.TitleViews.StoriesTitleView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:control="clr-namespace:LearningFun.Controls">
+    xmlns:controls="clr-namespace:LearningFun.Controls">
     <ContentView.Content>
         <Grid 
             RowSpacing="0"
@@ -28,15 +28,22 @@
                 Text="doing well!"
                 TextColor="{StaticResource ProgressColor}"
                 VerticalTextAlignment="Center" />
-            <StackLayout  
-                Grid.Row="1"
-                Grid.ColumnSpan="2"
-                Orientation="Horizontal">
-                <control:CustomProgressBar  
+           
+                <controls:CustomProgressBar  
                     x:Name="progressIndicator"
-                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0"
                     Progress="0.1"/>
-            </StackLayout>
+                <!--<controls:HorizontalProgressBar
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0"
+                    x:Name="progressIndicator"
+                            ProgressColor="{StaticResource ProgressColor}"
+                            TrackColor="{StaticResource TrackColor}"
+                            VerticalOptions="Center"/>-->
+
         </Grid>
         <!--BackgroundColor="{StaticResource TrackColor}"
         ProgressColor="{StaticResource ProgressColor}"-->

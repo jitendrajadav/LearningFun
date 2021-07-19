@@ -9,8 +9,8 @@ namespace LearningFun.Views
     public partial class ProfileView : ContentPage, IDynamicTitle, ITabPageIcons
     {
         private View _title;
-        private Lazy<ProfileAchievementsContentView> _sectionAchievements = new Lazy<ProfileAchievementsContentView>();
-        private Lazy<ProfileFriendsContentView> _sectionFriends = new Lazy<ProfileFriendsContentView>();
+        private readonly Lazy<ProfileAchievementsContentView> _sectionAchievements = new Lazy<ProfileAchievementsContentView>();
+        private readonly Lazy<ProfileFriendsContentView> _sectionFriends = new Lazy<ProfileFriendsContentView>();
         private bool _isFirstAppear = true;
 
         public ProfileView()
@@ -23,15 +23,17 @@ namespace LearningFun.Views
             base.OnAppearing();
 
             if (_isFirstAppear)
+            {
                 SelectFirstSection();
+            }
 
             _isFirstAppear = false;
         }
 
         private void SelectFirstSection()
         {
-            var index = 0;
-            foreach (var view in flexLayoutSection.Children)
+            int index = 0;
+            foreach (View view in flexLayoutSection.Children)
             {
                 if (view is Grid grid)
                 {
@@ -61,7 +63,9 @@ namespace LearningFun.Views
         public View GetTitle()
         {
             if (_title == null)
+            {
                 _title = new ProfileTitleView();
+            }
 
             return _title;
         }

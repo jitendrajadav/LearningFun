@@ -38,9 +38,11 @@ namespace LearningFun.Droid.Renderers
         private void ConfigureBackgroundColor()
         {
             if (Element == null)
+            {
                 return;
+            }
 
-            var floatingActionButtonColor = Element.BackgroundColor.ToAndroid();
+            Android.Graphics.Color floatingActionButtonColor = Element.BackgroundColor.ToAndroid();
             _floatingActionButton.BackgroundTintList = ColorStateList.ValueOf(floatingActionButtonColor);
             Element.BackgroundColor = Color.Transparent;
         }
@@ -48,13 +50,17 @@ namespace LearningFun.Droid.Renderers
         private void ConfigureImage()
         {
             if (Element == null)
+            {
                 return;
+            }
 
-            var fileName = (Element.ImageSource as FileImageSource)?.File;
+            string fileName = (Element.ImageSource as FileImageSource)?.File;
             if (fileName == null)
+            {
                 return;
+            }
 
-            var resourceId = ResourceUtil.GetDrawableIdByFileName(fileName, Context);
+            int resourceId = ResourceUtil.GetDrawableIdByFileName(fileName, Context);
             _floatingActionButton.SetImageResource(resourceId);
         }
 

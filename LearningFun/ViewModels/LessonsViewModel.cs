@@ -7,7 +7,7 @@ using LearningFun.Models;
 using LearningFun.Views;
 using Prism.Commands;
 using Prism.Navigation;
-
+using Prism.Navigation.TabbedPages;
 namespace LearningFun.ViewModels
 {
     public class LessonsViewModel : ViewModelBase, IInitialize
@@ -25,7 +25,7 @@ namespace LearningFun.ViewModels
 
         private void NavigateToTrainingExecute()
         {
-            _ = NavigationService.NavigateAsync(nameof(DragAndDropGesture));
+            _ = NavigationService.SelectTabAsync(nameof(DragnDropAchievement));
             System.Diagnostics.Debug.WriteLine("O FAB foi selecionado");
         }
 
