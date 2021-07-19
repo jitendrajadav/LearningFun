@@ -4,6 +4,7 @@ using LearningFun.Interfaces;
 using LearningFun.Models;
 using Prism;
 using System.Collections.ObjectModel;
+using Prism.Navigation;
 
 namespace LearningFun.ViewModels
 {
@@ -22,7 +23,7 @@ namespace LearningFun.ViewModels
 
         public ObservableCollection<StoreItemGroup> Groups { get; private set; }
 
-        public StoreViewModel(IStoreService storeService)
+        public StoreViewModel(IStoreService storeService, INavigationService navigationService) : base(navigationService)
         {
             _storeService = storeService;
             Groups = new ObservableCollection<StoreItemGroup>();

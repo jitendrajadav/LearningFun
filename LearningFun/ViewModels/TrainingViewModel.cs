@@ -1,8 +1,10 @@
-﻿namespace LearningFun.ViewModels
+﻿using Prism.Navigation;
+
+namespace LearningFun.ViewModels
 {
     public class TrainingViewModel : ViewModelBase
     {
-        public TrainingViewModel()
+        public TrainingViewModel(INavigationService navigationService) : base(navigationService)
         {
         }
     }

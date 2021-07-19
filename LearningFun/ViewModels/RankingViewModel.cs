@@ -1,8 +1,10 @@
-﻿namespace LearningFun.ViewModels
+﻿using Prism.Navigation;
+
+namespace LearningFun.ViewModels
 {
     public class RankingViewModel : ViewModelBase
     {
-        public RankingViewModel()
+        public RankingViewModel(INavigationService navigationService) : base(navigationService)
         {
         }
     }

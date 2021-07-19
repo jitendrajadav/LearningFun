@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LearningFun.Interfaces;
 using LearningFun.Models;
 using Prism;
+using Prism.Navigation;
 
 namespace LearningFun.ViewModels
 {
@@ -24,7 +25,7 @@ namespace LearningFun.ViewModels
 
         public event EventHandler IsActiveChanged;
 
-        public StoriesViewModel(IStoriesService storiesService)
+        public StoriesViewModel(IStoriesService storiesService, INavigationService navigationService) : base(navigationService)
         {
             _storiesService = storiesService;
             Stories = new ObservableCollection<StoriesGroup>();

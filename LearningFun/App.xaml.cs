@@ -26,6 +26,7 @@ namespace LearningFun
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<DragAndDropGesture>();
             containerRegistry.RegisterForNavigation<LessonsView, LessonsViewModel>();
             containerRegistry.RegisterForNavigation<StoriesView, StoriesViewModel>();
             containerRegistry.RegisterForNavigation<TrainingView, TrainingViewModel>();

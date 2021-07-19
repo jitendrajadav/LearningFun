@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using LearningFun.Interfaces;
 using LearningFun.Models;
 using Prism;
+using Prism.Navigation;
 
 namespace LearningFun.ViewModels
 {
@@ -17,7 +18,7 @@ namespace LearningFun.ViewModels
 
         public ProfileViewModel(
             IAchievementsService achievementsService,
-            IFriendsService friendsService)
+            IFriendsService friendsService, INavigationService navigationService) : base(navigationService)
         {
             _achievementsService = achievementsService;
             _friendsService = friendsService;
