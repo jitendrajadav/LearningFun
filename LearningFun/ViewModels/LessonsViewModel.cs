@@ -4,10 +4,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using LearningFun.Interfaces;
 using LearningFun.Models;
-using LearningFun.Views;
 using Prism.Commands;
 using Prism.Navigation;
-using Prism.Navigation.TabbedPages;
 namespace LearningFun.ViewModels
 {
     public class LessonsViewModel : ViewModelBase, IInitialize
@@ -25,8 +23,7 @@ namespace LearningFun.ViewModels
 
         private void NavigateToTrainingExecute()
         {
-            _ = NavigationService.SelectTabAsync(nameof(DragnDropAchievement));
-            System.Diagnostics.Debug.WriteLine("O FAB foi selecionado");
+            _ = NavigationService.NavigateAsync("DragnDropAchievement?createTab=DragnDropAchievement");
         }
 
         public async void Initialize(INavigationParameters parameters)

@@ -7,6 +7,8 @@ using LearningFun.Models;
 using Prism;
 using Prism.Navigation;
 using System.Linq;
+using System.Windows.Input;
+using Prism.Commands;
 
 namespace LearningFun.ViewModels
 {
@@ -18,16 +20,35 @@ namespace LearningFun.ViewModels
         public ObservableCollection<Achievement> Achievements { get; private set; }
         public ObservableCollection<Achievement> Friends { get; private set; }
 
+        public ICommand OnDragOverCommand { get; private set; }
+        public ICommand DragStartingCommand { get; private set; }
+
         public DragnDropAchievementViewModel(
             IAchievementsService achievementsService,
             IFriendsService friendsService, INavigationService navigationService) : base(navigationService)
         {
             _achievementsService = achievementsService;
             _friendsService = friendsService;
-
+            DragStartingCommand = new DelegateCommand<Achievement>(DragStartingCommandExecute);
+            OnDragOverCommand = new DelegateCommand(OnDragOverCommandExecute);
             Achievements = new ObservableCollection<Achievement>();
             Friends = new ObservableCollection<Achievement>();
         }
+
+        private void DragStartingCommandExecute(Achievement param)
+        {
+            _dragEvent = param;
+        }
+
+        private void OnDragOverCommandExecute()
+        {
+            if (Achievements.Contains(_dragEvent))
+            {
+                Achievements.Remove(_dragEvent);
+                Friends.Add(_dragEvent);
+            }
+        }
+        private Achievement _dragEvent;
 
         public event EventHandler IsActiveChanged;
 

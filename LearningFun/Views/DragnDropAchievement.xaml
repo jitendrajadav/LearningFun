@@ -22,14 +22,88 @@
                 </Setter>
             </Style>
     </ContentPage.Resources>-->
-    
+
+    <Grid 
+        x:Name="mainGrid"
+        RowDefinitions="*,*">
         <CollectionView
+            x:Name="AchievementsCollection"
             ItemsSource="{Binding Achievements}"
-            SelectionMode="Single"
-            ItemSizingStrategy="MeasureAllItems">
+            SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <FlexLayout Padding="20">
+                        <FlexLayout.GestureRecognizers>
+                            <DragGestureRecognizer
+                                DragStartingCommand="{Binding Path=BindingContext.DragStartingCommand, Source={x:Reference AchievementsCollection}}"
+                                                           DragStartingCommandParameter="{Binding .}"/>
+                        </FlexLayout.GestureRecognizers>
+                        <Grid FlexLayout.Basis="200" HeightRequest="130">
+                            <Image Source="{Binding Icon}" />
+
+                            <Label
+                                FontSize="20"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Level}"
+                                TextColor="{Binding IsActive, Converter={converters:AchievementsActiveToTextColorConverter}}"
+                                TranslationY="-20"
+                                VerticalTextAlignment="End" />
+                        </Grid>
+
+                        <FlexLayout
+                                Margin="20,0,0,0"
+                                Direction="Column"
+                                FlexLayout.Basis="100%"
+                                JustifyContent="SpaceEvenly">
+                            <Label
+                                FontSize="26"
+                                Text="{Binding Name}"
+                                VerticalOptions="CenterAndExpand" />
+
+                            <Label
+                                FontFamily="{StaticResource FontRegular}"
+                                FontSize="22"
+                                Text="{Binding Description}"
+                                TextColor="#777777"
+                                VerticalOptions="CenterAndExpand" />
+
+                            <Grid
+                                ColumnSpacing="20"
+                                IsVisible="{Binding IsActive}"
+                                VerticalOptions="CenterAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <controls:HorizontalProgressBar
+                                        Grid.Column="0"
+                                        Progress="{Binding Progress}"
+                                        ProgressColor="{StaticResource ProgressColor}"
+                                        TrackColor="{StaticResource TrackColor}"
+                                        VerticalOptions="Center"/>
+
+                                <Label
+                                    Grid.Column="1"
+                                    FontSize="20"
+                                    Text="{Binding Status}"
+                                    TextColor="#afafae"
+                                    VerticalOptions="Center"/>
+                            </Grid>
+                        </FlexLayout>
+                    </FlexLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+       
+        <CollectionView
+            Grid.Row="1"
+            ItemsSource="{Binding Friends}"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <FlexLayout Padding="20">
+                        
                         <Grid FlexLayout.Basis="200" HeightRequest="130">
                             <Image Source="{Binding Icon}" />
 
@@ -87,5 +161,9 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Grid.GestureRecognizers>
+            <DropGestureRecognizer DragOverCommand="{Binding Path=BindingContext.OnDragOverCommand, Source={x:Reference mainGrid}}"/>
+        </Grid.GestureRecognizers>
+    </Grid>
 
 </ContentPage>
