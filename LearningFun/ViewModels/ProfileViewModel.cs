@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using LearningFun.Interfaces;
@@ -47,7 +48,7 @@ namespace LearningFun.ViewModels
             {
                 if (Achievements.Count == 0)
                 {
-                    System.Collections.Generic.IList<Achievement> achievements = await _achievementsService.GetAchievementsAsync();
+                    IList<Achievement> achievements = await _achievementsService.GetAchievementsAsync();
 
                     foreach (Achievement achievement in achievements)
                     {
@@ -57,7 +58,7 @@ namespace LearningFun.ViewModels
 
                 if (Friends.Count == 0)
                 {
-                    System.Collections.Generic.IList<Friend> friends = await _friendsService.GetFriends();
+                    IList<Friend> friends = await _friendsService.GetFriends();
                     
                     foreach (Friend friend in friends)
                     {

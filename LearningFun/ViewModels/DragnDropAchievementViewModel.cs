@@ -15,7 +15,6 @@ namespace LearningFun.ViewModels
     public class DragnDropAchievementViewModel : ViewModelBase, IActiveAware
     {
         private readonly IAchievementsService _achievementsService;
-        private readonly IFriendsService _friendsService;
 
         public ObservableCollection<Achievement> Achievements { get; private set; }
         public ObservableCollection<Achievement> Friends { get; private set; }
@@ -24,11 +23,9 @@ namespace LearningFun.ViewModels
         public ICommand DragStartingCommand { get; private set; }
 
         public DragnDropAchievementViewModel(
-            IAchievementsService achievementsService,
-            IFriendsService friendsService, INavigationService navigationService) : base(navigationService)
+            IAchievementsService achievementsService, INavigationService navigationService) : base(navigationService)
         {
             _achievementsService = achievementsService;
-            _friendsService = friendsService;
             DragStartingCommand = new DelegateCommand<Achievement>(DragStartingCommandExecute);
             OnDragOverCommand = new DelegateCommand(OnDragOverCommandExecute);
             Achievements = new ObservableCollection<Achievement>();

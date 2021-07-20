@@ -20,21 +20,11 @@ namespace LearningFun.Templates
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            if (item is StoreItem storeItem)
-            {
-                if (storeItem.Type == StoreItemType.Sell)
-                    return _sell;
-
-                if (storeItem.Type == StoreItemType.Ads)
-                    return _ads;
-
-                if (storeItem.Type == StoreItemType.Normal)
-                    return _normal;
-
-                return null;
-            }
-
-            return null;
+            return item is StoreItem storeItem
+                ? storeItem.Type == StoreItemType.Sell
+                    ? _sell
+                    : storeItem.Type == StoreItemType.Ads ? _ads : storeItem.Type == StoreItemType.Normal ? _normal : null
+                : null;
         }
     }
 }

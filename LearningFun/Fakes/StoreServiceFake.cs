@@ -13,7 +13,7 @@ namespace LearningFun.Fakes
         {
             return await Task.Run(() =>
             {
-                var storeItems = GetStoreItems();
+                List<StoreItem> storeItems = GetStoreItems();
                 return GroupStoreItems(storeItems);
             });
         }

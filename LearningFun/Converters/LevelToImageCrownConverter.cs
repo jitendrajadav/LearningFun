@@ -8,12 +8,9 @@ namespace LearningFun.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var level = value as string;
+            string level = value as string;
 
-            if (level == string.Empty)
-                return "crown_gray_stroke";
-
-            return "crown_stroke";
+            return level == string.Empty ? "crown_gray_stroke" : "crown_stroke";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -20,10 +20,10 @@ namespace LearningFun.Views.TitleViews
 
         private async Task UpdateProgressValue()
         {
-          await  progressIndicator.ProgressTo(0.7, 3000, Easing.SinOut);
+            _ = await progressIndicator.ProgressTo(0.7, 3000, Easing.SinOut);
             //progressIndicator.Progress = 0.9;
             //progressIndicator.TrackColor = Color.Green;
-            //await Navigation.PushAsync(page: new DragAndDropGesture());
+            await Navigation.PushAsync(page: new DragAndDropGesture());
         }
     }
 }

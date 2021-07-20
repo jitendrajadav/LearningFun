@@ -35,13 +35,17 @@ namespace LearningFun.ViewModels
         {
             if (IsActive)
             {
-                var groups = await GetStories();
+                IList<StoriesGroup> groups = await GetStories();
 
                 if (Stories.Any())
+                {
                     Stories.Clear();
+                }
 
                 foreach (var story in groups)
+                {
                     Stories.Add(story);
+                }
             }
         }
 

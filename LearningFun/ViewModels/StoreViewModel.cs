@@ -5,6 +5,7 @@ using LearningFun.Models;
 using Prism;
 using System.Collections.ObjectModel;
 using Prism.Navigation;
+using System.Collections.Generic;
 
 namespace LearningFun.ViewModels
 {
@@ -35,10 +36,12 @@ namespace LearningFun.ViewModels
             {
                 if (!Groups.Any())
                 {
-                    var storeGroups = await _storeService.GetItems();
+                    IList<StoreItemGroup> storeGroups = await _storeService.GetItems();
 
                     foreach (var group in storeGroups)
+                    {
                         Groups.Add(group);
+                    }
                 }
             }
         }

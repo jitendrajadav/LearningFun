@@ -26,7 +26,9 @@ namespace LearningFun.Views
         public View GetTitle()
         {
             if (_title == null)
+            {
                 _title = new LessonsTitleView();
+            }
 
             return _title;
         }

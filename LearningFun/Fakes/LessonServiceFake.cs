@@ -8,13 +8,13 @@ namespace LearningFun.Fakes
 {
     public class LessonServiceFake : ILessonService
     {
-        private string _colorLevel5 = "#f7c745";
-        private string _colorLevel4 = "#f19a37";
-        private string _colorLevel3 = "#ec5954";
-        private string _colorLevel2 = "#8bc63b";
-        private string _colorLevel1 = "#4faef0";
-        private string _colorLevel0 = "#c287f8";
-        private string _colorBonus = "#ffffff";
+        private readonly string _colorLevel5 = "#f7c745";
+        private readonly string _colorLevel4 = "#f19a37";
+        private readonly string _colorLevel3 = "#ec5954";
+        private readonly string _colorLevel2 = "#8bc63b";
+        private readonly string _colorLevel1 = "#4faef0";
+        private readonly string _colorLevel0 = "#c287f8";
+        private readonly string _colorBonus = "#ffffff";
 
         public async Task<IList<LessonGroup>> GetLessonsGroup()
         {

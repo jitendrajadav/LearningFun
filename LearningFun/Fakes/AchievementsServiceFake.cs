@@ -64,7 +64,7 @@ namespace LearningFun.Fakes
                         "Estrategista",
                         "Você leu uma dica",
                         1,
-                        "JJ",
+                        "12/99",
                         true
                     )
                 };

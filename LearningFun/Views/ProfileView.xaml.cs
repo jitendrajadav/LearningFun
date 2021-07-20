@@ -104,8 +104,8 @@ namespace LearningFun.Views
             if (grid.Children[0] is Label label &&
                 grid.Children[1] is BoxView boxView)
             {
-                VisualStateManager.GoToState(label, "Selected");
-                VisualStateManager.GoToState(boxView, "Selected");
+                _ = VisualStateManager.GoToState(label, "Selected");
+                _ = VisualStateManager.GoToState(boxView, "Selected");
             }
         }
 
@@ -114,8 +114,8 @@ namespace LearningFun.Views
             if (grid.Children[0] is Label label &&
                 grid.Children[1] is BoxView boxView)
             {
-                VisualStateManager.GoToState(label, "UnSelected");
-                VisualStateManager.GoToState(boxView, "UnSelected");
+                _ = VisualStateManager.GoToState(label, "UnSelected");
+                _ = VisualStateManager.GoToState(boxView, "UnSelected");
             }
         }
     }

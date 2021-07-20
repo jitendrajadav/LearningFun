@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using LearningFun.Interfaces;
 using LearningFun.Models;
+using LearningFun.Views;
 using Prism.Commands;
 using Prism.Navigation;
+
 namespace LearningFun.ViewModels
 {
     public class LessonsViewModel : ViewModelBase, IInitialize
@@ -23,7 +25,8 @@ namespace LearningFun.ViewModels
 
         private void NavigateToTrainingExecute()
         {
-            _ = NavigationService.NavigateAsync("DragnDropAchievement?createTab=DragnDropAchievement");
+            string dragnDropAchievementPage = $"{nameof(DragnDropAchievement)}?createTab=DragnDropAchievement";
+            _ = NavigationService.NavigateAsync(nameof(DragnDropAchievement));
         }
 
         public async void Initialize(INavigationParameters parameters)
