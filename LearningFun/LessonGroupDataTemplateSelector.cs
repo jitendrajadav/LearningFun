@@ -25,13 +25,19 @@ namespace LearningFun.Templates
             if (item is LessonGroup group)
             {
                 if (group.Type == LessonGroupTypeEnum.Multi)
+                {
                     return Multi;
+                }
 
                 if (group.Type == LessonGroupTypeEnum.Bonus)
+                {
                     return Bonus;
+                }
 
                 if (group.Type == LessonGroupTypeEnum.Divisor)
+                {
                     return Divisor;
+                }
             }
 
             return Single;

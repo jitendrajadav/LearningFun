@@ -26,7 +26,7 @@ namespace LearningFun.ViewModels
         private void NavigateToTrainingExecute()
         {
             string dragnDropAchievementPage = $"{nameof(DragnDropAchievement)}?createTab=DragnDropAchievement";
-            _ = NavigationService.NavigateAsync(nameof(DragnDropAchievement));
+            _ = NavigationService.NavigateAsync(nameof(MatchView));
         }
 
         public async void Initialize(INavigationParameters parameters)

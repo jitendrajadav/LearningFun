@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:LearningFun.Controls">
+    
     <ContentView.Content>
         <Grid 
             RowSpacing="0"
@@ -40,9 +41,9 @@
                     Grid.ColumnSpan="2"
                     Grid.Column="0"
                     x:Name="progressIndicator"
-                            ProgressColor="{StaticResource ProgressColor}"
-                            TrackColor="{StaticResource TrackColor}"
-                            VerticalOptions="Center"/>-->
+                    ProgressColor="{StaticResource ProgressColor}"
+                    TrackColor="{StaticResource TrackColor}"
+                    VerticalOptions="Center"/>-->
 
         </Grid>
         <!--BackgroundColor="{StaticResource TrackColor}"

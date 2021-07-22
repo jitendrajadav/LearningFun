@@ -39,7 +39,7 @@ namespace LearningFun.Controls
                 typeof(double),
                 typeof(ProgressBarBase),
                 0.0,
-                BindingMode.TwoWay,
+                BindingMode.OneWay,
                 propertyChanged: (bindable, oldValue, newValue) =>
                 {
                     ProgressBarBase control = (ProgressBarBase)bindable;

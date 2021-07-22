@@ -28,6 +28,7 @@ namespace LearningFun
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<DragAndDropGesture>();
             containerRegistry.RegisterForNavigation<DragnDropAchievement, DragnDropAchievementViewModel>();
+            containerRegistry.RegisterForNavigation<MatchView, MatchViewModel>();
 
             containerRegistry.RegisterForNavigation<LessonsView, LessonsViewModel>();
             containerRegistry.RegisterForNavigation<StoriesView, StoriesViewModel>();
